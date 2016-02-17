@@ -1,3 +1,4 @@
+#!NOT FINISHED YET, GIVES WRONG ANSWER ERROR
 inp = input().split()
 N,M = inp
 ncd = {}
