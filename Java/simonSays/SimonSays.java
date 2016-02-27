@@ -1,17 +1,3 @@
-package simonSays;
-
-// input
-/*
- 
-4
-simon says write a program
-print some output
-simon whispers do not stress
-simon says get balloons
- 
- 
- */
-
 import java.io.PrintStream;
 import java.util.Scanner;
 
@@ -37,12 +23,10 @@ public class SimonSays {
 		for (int i = 1; i <= N; i++) {
 			String line = commands[i];
 			if (line.length() > 10) {
-				if (line.substring(0, 10).equals("simon says")) {
+				if (line.substring(0, 10).equals("Simon says")) {
 					out.println(line.subSequence(11, line.length()));
-				} else
-					out.println();
-			} else
-				out.println();
+				} 
+			} 
 		}
 	}
 
