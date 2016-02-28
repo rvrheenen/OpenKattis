@@ -1,4 +1,3 @@
-// WORKS BUT NOT FAST ENOUGH
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -12,12 +11,13 @@ public class Listgame {
             int K = Integer.parseInt(bi.readLine());
             int Y = 0;
             
-            for (int i = 2; i <= K; i++){
+            for (int i = 1; i*i <= K; i++){
                 if (K%i == 0){
                     K /= i;
                     Y++;
                     i = 1;
                 }
+                if (K == 1) Y++;
             }
             System.out.println(Y);
 
@@ -26,3 +26,6 @@ public class Listgame {
         }
     }
 }
+
+// 65536  => 16
+// 127381 => 3

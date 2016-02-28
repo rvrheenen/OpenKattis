@@ -1,4 +1,3 @@
-/* WORKS BUT EXCEEDS TIME LIMIT*/
 #include <stdio.h>
 
 int main(void){
@@ -8,11 +7,14 @@ int main(void){
 	scanf("%d", &K);
 	
 	int i;
-	for ( i = 2; i <= K; i++){
+	for ( i = 1; i*i <= K; i++){
 		if (K%i == 0){
 			K = K/i;
 			Y++;
 			i = 1;
+		}
+		if (K==1){
+			Y++;
 		}
 	}
 
