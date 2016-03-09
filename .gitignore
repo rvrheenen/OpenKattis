@@ -1,2 +1,5 @@
 #Below shouldn't be pushed yet:
 Python/listgame2
+Python/.DS_Store
+C/.DS_Store
+.gitignore
