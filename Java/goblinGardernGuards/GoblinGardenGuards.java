@@ -1,4 +1,4 @@
-//WORKS BUT NOT FAST ENOUGH YET
+//WORKS BUT NOT FAST ENOUGH JAVA.
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 

@@ -9,4 +9,3 @@ for t in range(T):
         print("YES")
     else:
         print("NO")
-
