@@ -1,9 +1,10 @@
+import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class cd {
 
-     public static void main(String[] args) {
+     public static void main(String[] args) throws IOException{
 
         BufferedReader bi = new BufferedReader(new InputStreamReader(System.in));
         int N, M;
@@ -11,31 +12,20 @@ public class cd {
 
         while (true){
             String line = "";
-            try {        
                 line = bi.readLine();
-            } catch(Exception e){
-                e.printStackTrace();
-            }
             inp = line.split(" ");
             N = Integer.parseInt(inp[0]);
             M = Integer.parseInt(inp[1]);
             if (N == 0 && M == 0) break;
             int[] ncd = new int[N];
             for (int i = 0; i < N; i++){
-                try {
                     ncd[i] = Integer.parseInt(bi.readLine());
-                } catch(Exception e){
-                    e.printStackTrace();
-                }
             }
             int[] mcd = new int[M];
             for (int i = 0; i < M; i++){
-                try {
                     mcd[i] = Integer.parseInt(bi.readLine());
-                } catch(Exception e){
-                    e.printStackTrace();
-                }
             }
+
             int n = 0;
             int m = 0;
             int c = 0;
