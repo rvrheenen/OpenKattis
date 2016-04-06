@@ -8,14 +8,7 @@ import java.io.InputStreamReader;
 public class EightQueens {
 
 	public static 		int curX, curY, nextX, nextY;
-	public static final int[][] DIRECTIONS = {	{0,-1},
-												{1,-1},
-												{1,0},
-												{1,1},
-												{0,1},
-												{-1,1},
-												{-1,0},
-												{-1,-1}};
+	public static final int[][] DIRECTIONS = {	{0,-1}, {1,-1}, {1,0}, {1,1}, {0,1}, {-1,1}, {-1,0}, {-1,-1}};
 
     public static void main(String[] args){
 
