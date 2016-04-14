@@ -1,10 +1,8 @@
 T = int(input())
 for i in range(T):
     input()
-    inp = input().split()
-    cs = int(inp[0])
-    ec = int(inp[1])
-    total = sum([int(x) for x in inp])
+    cs, ec = [int(x) for x in input().split()]
+    total = cs + ec
     
     IQs = [int(x) for x in input().split()]
     while len(IQs)<total:
