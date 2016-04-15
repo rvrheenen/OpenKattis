@@ -4,7 +4,7 @@ package catAndMouse;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class CatAndMouse {
+public class CatMouse {
 
 	PrintStream out;
 	Scanner 	in;
@@ -46,7 +46,7 @@ public class CatAndMouse {
 	}
 
 	public static void main(String[] args) {
-		new CatAndMouse().start();
+		new CatMouse().start();
 	
 	}
 }

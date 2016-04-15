@@ -1,4 +1,4 @@
-//WORKS BUT NOT FAST ENOUGH JAVA.
+// Works but not fast enough in Java, C does work however.
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 

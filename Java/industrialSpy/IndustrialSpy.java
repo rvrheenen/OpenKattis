@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.HashSet;
 
-public class AnIndustrialSpy {
+public class IndustrialSpy {
 
 	PrintStream    out;
 	BufferedReader br;

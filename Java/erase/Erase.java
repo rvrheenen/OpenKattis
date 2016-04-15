@@ -3,7 +3,7 @@ package eraseSecurely;
 import java.util.Scanner;
 import java.io.PrintStream;
 
-public class EraseSecurely {
+public class Erase {
 
 	Scanner in;
 	PrintStream out;

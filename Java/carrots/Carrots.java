@@ -3,7 +3,7 @@ package solvingForCarrots;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class SolvingForCarrots {
+public class Carrots {
 	
 	Scanner in;
 	PrintStream out;
