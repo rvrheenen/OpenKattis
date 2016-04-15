@@ -1,3 +1,4 @@
+// Too slow in Java, but did work in C
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -26,6 +27,3 @@ public class Listgame {
         }
     }
 }
-
-// 65536  => 16
-// 127381 => 3

@@ -1,3 +1,4 @@
+#Too slow, works in Java instead
 import datetime
 a = datetime.datetime.now()
 while(True):
