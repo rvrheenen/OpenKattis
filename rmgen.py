@@ -6,8 +6,10 @@
 ## Description: README.MD generator for OpenKattis github repository  ##
 ########################################################################
 ##
-## To do: catch failed cUrls
-##
+## TODO: 
+##      - catch failed cUrls
+##      - Automate per language stats
+
 import os
 import io
 import random
@@ -23,11 +25,16 @@ def make_readme(problems):
     print("## Problems")
 
     solved_problems = problems.search("solved", True)
+    solved_amount = solved_problems.count()
 
     print(make_table(["Problem", "Language", "Difficulty"], solved_problems.get(["link", "language", "difficulty"]), "lmm", "Solved Problems:"))
-    print("#### Total solved: " + str(round(solved_problems.count(),2)))
+    print("#### Total solved: " + str(solved_amount))
+    print("###### Solved in Python: " + str(solved_problems.search("language", "Python").count() ) + "(" + str(round((solved_problems.search("language", "Python").count() / solved_amount) * 100, 2)) + "%)")
+    print("###### Solved in Java: " + str(solved_problems.search("language", "Java").count() ) + "(" + str(round((solved_problems.search("language", "Java").count() / solved_amount) * 100,2)) + "%)")
+    print("###### Solved in C: " + str(solved_problems.search("language", "C").count() ) + "(" + str(round((solved_problems.search("language", "C").count() / solved_amount) * 100, 2)) + "%)")
+
     print("#### Average score: " + str(round(solved_problems.get_total_score()/solved_problems.count(),2)) )
-    print("#### Total score: " + str(solved_problems.get_total_score()))
+    print("#### Total score: " + str(1 + solved_problems.get_total_score()))
     
     highest = solved_problems.search("difficulty", str(max([float(x[0]) for x in solved_problems.get("difficulty")])) ) 
     print(make_table(["Problem", "Language", "Difficulty"], highest.get(["link", "language", "difficulty"]), None, "Highest difficulty solved"))

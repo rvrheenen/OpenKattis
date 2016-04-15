@@ -20,7 +20,7 @@ By Rick van Rheenen
 | [Booking a Room ] (https://open.kattis.com/problems/bookingaroom) | Java | 1.7 |
 | [Bottled-Up Feelings ] (https://open.kattis.com/problems/bottledup) | Python | 2.2 |
 | [Bounding Robots ] (https://open.kattis.com/problems/boundingrobots) | Java | 1.7 |
-| [CD ] (https://open.kattis.com/problems/cd) | Java | 3.7 |
+| [CD ] (https://open.kattis.com/problems/cd) | Java | 3.8 |
 | [Cold-puter Science ] (https://open.kattis.com/problems/cold) | Python | 1.3 |
 | [Eight Queens ] (https://open.kattis.com/problems/8queens) | Java | 3.3 |
 | [Eligibility ] (https://open.kattis.com/problems/eligibility) | Python | 1.3 |
@@ -42,7 +42,7 @@ By Rick van Rheenen
 | [Pet ] (https://open.kattis.com/problems/pet) | Java | 1.3 |
 | [Planting Trees ] (https://open.kattis.com/problems/plantingtrees) | Python | 1.8 |
 | [Primary Register ] (https://open.kattis.com/problems/register) | C | 2.9 |
-| [Prime Sieve ] (https://open.kattis.com/problems/primesieve) | Java | 3.9 |
+| [Prime Sieve ] (https://open.kattis.com/problems/primesieve) | Java | 4.0 |
 | [Quick Brown Fox ] (https://open.kattis.com/problems/quickbrownfox) | Python | 1.6 |
 | [Reversed Binary Numbers ] (https://open.kattis.com/problems/reversebinary) | Java | 1.3 |
 | [Secure doors ] (https://open.kattis.com/problems/securedoors) | Python | 1.9 |
@@ -57,8 +57,11 @@ By Rick van Rheenen
 | [Troll Hunt ] (https://open.kattis.com/problems/trollhunt) | Java | 3.6 |
 
 #### Total solved: 49
+###### Solved in Python: 25(51.02%)
+###### Solved in Java: 18(36.73%)
+###### Solved in C: 6(12.24%)
 #### Average score: 2.02
-#### Total score: 98.8
+#### Total score: 100.0
 #### Highest difficulty solved
 | Problem | Language | Difficulty |
 | :--- | :---: | :---: |
