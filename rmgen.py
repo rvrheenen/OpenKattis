@@ -36,7 +36,7 @@ def make_readme(problems):
     print("#### Average score: " + str(round(solved_problems.get_total_score()/solved_problems.count(),2)) )
     print("#### Total score: " + str(1 + solved_problems.get_total_score()))
     
-    highest = solved_problems.sort("difficulty", True).problems[0] 
+    highest = solved_problems.search("difficulty", str(max([float(x[0]) for x in solved_problems.get("difficulty")])) ) 
     print(make_table(["Problem", "Language", "Difficulty"], highest.get(["link", "language", "difficulty"]), None, "Highest difficulty solved"))
     
     print(make_table(["Problem", "Language"], problems.search("solved", False).get(["link", "language"]), "lm", "Unsolved Problems:"))
