@@ -2,13 +2,13 @@
 ## File name: rmgen.py                                                ##
 ## Author: Rick van Rheenen                                           ##
 ## Date created: 2016-04-14                                           ##
-## Date last modified: 2016-04-15                                     ##
+## Date last modified: 2016-04-16                                     ##
 ## Description: README.MD generator for OpenKattis github repository  ##
 ########################################################################
 ##
 ## TODO: 
 ##      - catch failed cUrls
-##      - Automate per language stats
+##
 
 import os
 import io
@@ -29,14 +29,14 @@ def make_readme(problems):
 
     print(make_table(["Problem", "Language", "Difficulty"], solved_problems.get(["link", "language", "difficulty"]), "lmm", "Solved Problems:"))
     print("#### Total solved: " + str(solved_amount))
-    print("###### Solved in Python: " + str(solved_problems.search("language", "Python").count() ) + "(" + str(round((solved_problems.search("language", "Python").count() / solved_amount) * 100, 2)) + "%)")
-    print("###### Solved in Java: " + str(solved_problems.search("language", "Java").count() ) + "(" + str(round((solved_problems.search("language", "Java").count() / solved_amount) * 100,2)) + "%)")
-    print("###### Solved in C: " + str(solved_problems.search("language", "C").count() ) + "(" + str(round((solved_problems.search("language", "C").count() / solved_amount) * 100, 2)) + "%)")
 
+    for lang in solved_problems.get_distinct_vars("language"):
+        print("###### Solved in " + lang + ": " + str(solved_problems.search("language", lang).count() ) + "(" + str(round((solved_problems.search("language", lang).count() / solved_amount) * 100, 2)) + "%)")
+    
     print("#### Average score: " + str(round(solved_problems.get_total_score()/solved_problems.count(),2)) )
     print("#### Total score: " + str(1 + solved_problems.get_total_score()))
     
-    highest = solved_problems.search("difficulty", str(max([float(x[0]) for x in solved_problems.get("difficulty")])) ) 
+    highest = solved_problems.sort("difficulty", True).problems[0] 
     print(make_table(["Problem", "Language", "Difficulty"], highest.get(["link", "language", "difficulty"]), None, "Highest difficulty solved"))
     
     print(make_table(["Problem", "Language"], problems.search("solved", False).get(["link", "language"]), "lm", "Unsolved Problems:"))
@@ -52,6 +52,9 @@ def make_table(head, rows, aligns=None, title=None):
     table += make_table_row(head)
     align = parse_aligns(aligns if aligns != None else ("l" + "m"*(len(head)-1))) 
     table += make_table_row(align)
+    if isinstance(rows, list):
+        if not isinstance(rows[0], list):
+            rows = [rows]
     for row in rows.get() if isinstance(rows, ProblemsList) else rows:
         table += make_table_row(row.get() if isinstance(row, Problem) else row)
     return table
@@ -212,6 +215,15 @@ class ProblemsList:
         for prob in (self.problems if type == None and q == None else self.search(type, q).problems):
             count += float(prob.get("difficulty")[0])
         return round(count,1)
+
+    def get_distinct_vars(self, var):
+        '''Returns all distinct occurrences of var in problems, returns list'''
+        distinct = []
+        for p in self.problems:
+            a = getattr(p, var)
+            if a not in distinct:
+                distinct.append(a)
+        return distinct
 
     def get_random(self):
         '''Returns random Problem'''

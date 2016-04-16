@@ -11,14 +11,15 @@ By Rick van Rheenen
 | [A List Game ] (https://open.kattis.com/problems/listgame) | C | 2.8 |
 | [A Real Challenge ] (https://open.kattis.com/problems/areal) | Python | 1.4 |
 | [ACM Contest Scoring ] (https://open.kattis.com/problems/acm) | Java | 1.4 |
-| [Aaah! ] (https://open.kattis.com/problems/aaah) | Python | 1.4 |
-| [An Industrial Spy ] (https://open.kattis.com/problems/industrialspy) | Java | 3.4 |
+| [Aaah! ] (https://open.kattis.com/problems/aaah) | Python | 1.5 |
+| [Adding words ] (https://open.kattis.com/problems/addingwords) | Python | 4.1 |
+| [An Industrial Spy ] (https://open.kattis.com/problems/industrialspy) | Java | 3.3 |
 | [Another Candies ] (https://open.kattis.com/problems/anothercandies) | Python | 2.5 |
 | [Apaxiaaaaaaaaaaaans! ] (https://open.kattis.com/problems/apaxiaaans) | Python | 1.3 |
 | [Army Strength (Easy) ] (https://open.kattis.com/problems/armystrengtheasy) | Python | 1.8 |
 | [Babelfish ] (https://open.kattis.com/problems/babelfish) | Java | 1.7 |
 | [Booking a Room ] (https://open.kattis.com/problems/bookingaroom) | Java | 1.7 |
-| [Bottled-Up Feelings ] (https://open.kattis.com/problems/bottledup) | Python | 2.2 |
+| [Bottled-Up Feelings ] (https://open.kattis.com/problems/bottledup) | Python | 2.1 |
 | [Bounding Robots ] (https://open.kattis.com/problems/boundingrobots) | Java | 1.7 |
 | [CD ] (https://open.kattis.com/problems/cd) | Java | 3.8 |
 | [Cold-puter Science ] (https://open.kattis.com/problems/cold) | Python | 1.3 |
@@ -41,8 +42,8 @@ By Rick van Rheenen
 | [Parking ] (https://open.kattis.com/problems/parking) | C | 1.5 |
 | [Pet ] (https://open.kattis.com/problems/pet) | Java | 1.3 |
 | [Planting Trees ] (https://open.kattis.com/problems/plantingtrees) | Python | 1.8 |
-| [Primary Register ] (https://open.kattis.com/problems/register) | C | 2.9 |
-| [Prime Sieve ] (https://open.kattis.com/problems/primesieve) | Java | 4.0 |
+| [Primary Register ] (https://open.kattis.com/problems/register) | C | 2.8 |
+| [Prime Sieve ] (https://open.kattis.com/problems/primesieve) | Java | 3.9 |
 | [Quick Brown Fox ] (https://open.kattis.com/problems/quickbrownfox) | Python | 1.6 |
 | [Reversed Binary Numbers ] (https://open.kattis.com/problems/reversebinary) | Java | 1.3 |
 | [Secure doors ] (https://open.kattis.com/problems/securedoors) | Python | 1.9 |
@@ -55,13 +56,14 @@ By Rick van Rheenen
 | [Toilet Seat ] (https://open.kattis.com/problems/toilet) | Python | 1.9 |
 | [Trik ] (https://open.kattis.com/problems/trik) | Python | 1.3 |
 | [Troll Hunt ] (https://open.kattis.com/problems/trollhunt) | Java | 3.6 |
+| [What does the fox say? ] (https://open.kattis.com/problems/whatdoesthefoxsay) | Python | 1.7 |
 
-#### Total solved: 49
-###### Solved in Python: 25(51.02%)
-###### Solved in Java: 18(36.73%)
-###### Solved in C: 6(12.24%)
-#### Average score: 2.02
-#### Total score: 100.0
+#### Total solved: 51
+###### Solved in Java: 18(35.29%)
+###### Solved in Python: 27(52.94%)
+###### Solved in C: 6(11.76%)
+#### Average score: 2.05
+#### Total score: 105.5
 #### Highest difficulty solved
 | Problem | Language | Difficulty |
 | :--- | :---: | :---: |
