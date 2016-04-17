@@ -17,7 +17,7 @@ for f in "${testdataname[@]}"; do
         then
 
         #diff the judge's output and the program output
-        diffResult="$(diff -b $dataname.out $dataname.output)"
+        diffResult="$(diff -b $dataname.ans $dataname.output)"
       
         if [ -n "$diffResult" ]
           then
