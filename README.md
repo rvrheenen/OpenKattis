@@ -25,6 +25,7 @@ By Rick van Rheenen
 | [CD ] (https://open.kattis.com/problems/cd) | Java | 3.8 |
 | [Cold-puter Science ] (https://open.kattis.com/problems/cold) | Python | 1.3 |
 | [Compound Words ] (https://open.kattis.com/problems/compoundwords) | Python | 1.6 |
+| [Cryptographer's Conundrum ] (https://open.kattis.com/problems/conundrum) | Python | 1.3 |
 | [Eight Queens ] (https://open.kattis.com/problems/8queens) | Java | 3.3 |
 | [Eligibility ] (https://open.kattis.com/problems/eligibility) | Python | 1.3 |
 | [Erase Securely ] (https://open.kattis.com/problems/erase) | Java | 1.5 |
@@ -46,6 +47,7 @@ By Rick van Rheenen
 | [Pet ] (https://open.kattis.com/problems/pet) | Java | 1.3 |
 | [Pizza Crust ] (https://open.kattis.com/problems/pizza2) | Python | 1.3 |
 | [Planting Trees ] (https://open.kattis.com/problems/plantingtrees) | Python | 1.8 |
+| [Pot ] (https://open.kattis.com/problems/pot) | Python | 1.3 |
 | [Primary Register ] (https://open.kattis.com/problems/register) | C | 2.9 |
 | [Prime Sieve ] (https://open.kattis.com/problems/primesieve) | Java | 3.9 |
 | [Quick Brown Fox ] (https://open.kattis.com/problems/quickbrownfox) | Python | 1.6 |
@@ -64,12 +66,12 @@ By Rick van Rheenen
 | [What does the fox say? ] (https://open.kattis.com/problems/whatdoesthefoxsay) | Python | 1.7 |
 | [Words for Numbers ] (https://open.kattis.com/problems/wordsfornumbers) | Python | 2.3 |
 
-#### Total solved: 57
-###### Solved in Java: 18(31.58%)
-###### Solved in Python: 33(57.89%)
-###### Solved in C: 6(10.53%)
-#### Average score: 2.11
-#### Total score: 121.4
+#### Total solved: 59
+###### Solved in Java: 18(30.51%)
+###### Solved in Python: 35(59.32%)
+###### Solved in C: 6(10.17%)
+#### Average score: 2.08
+#### Total score: 124.0
 #### Highest difficulty solved
 | Problem | Language | Difficulty |
 | :--- | :---: | :---: |
