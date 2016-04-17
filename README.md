@@ -11,7 +11,7 @@ By Rick van Rheenen
 | [A List Game ] (https://open.kattis.com/problems/listgame) | C | 2.8 |
 | [A Real Challenge ] (https://open.kattis.com/problems/areal) | Python | 1.4 |
 | [ACM Contest Scoring ] (https://open.kattis.com/problems/acm) | Java | 1.4 |
-| [Aaah! ] (https://open.kattis.com/problems/aaah) | Python | 1.5 |
+| [Aaah! ] (https://open.kattis.com/problems/aaah) | Python | 1.4 |
 | [Adding words ] (https://open.kattis.com/problems/addingwords) | Python | 4.1 |
 | [An Industrial Spy ] (https://open.kattis.com/problems/industrialspy) | Java | 3.3 |
 | [Another Candies ] (https://open.kattis.com/problems/anothercandies) | Python | 2.5 |
@@ -23,12 +23,14 @@ By Rick van Rheenen
 | [Bounding Robots ] (https://open.kattis.com/problems/boundingrobots) | Java | 1.7 |
 | [CD ] (https://open.kattis.com/problems/cd) | Java | 3.8 |
 | [Cold-puter Science ] (https://open.kattis.com/problems/cold) | Python | 1.3 |
+| [Compound Words ] (https://open.kattis.com/problems/compoundwords) | Python | 1.6 |
 | [Eight Queens ] (https://open.kattis.com/problems/8queens) | Java | 3.3 |
 | [Eligibility ] (https://open.kattis.com/problems/eligibility) | Python | 1.3 |
 | [Erase Securely ] (https://open.kattis.com/problems/erase) | Java | 1.5 |
 | [Flying Safely ] (https://open.kattis.com/problems/flyingsafely) | Python | 2.5 |
 | [Goblin Garden Guards ] (https://open.kattis.com/problems/goblingardenguards) | C | 6.6 |
 | [Hello World! ] (https://open.kattis.com/problems/hello) | Python | 1.2 |
+| [High Score ] (https://open.kattis.com/problems/highscore) | Python | 6.1 |
 | [I've Been Everywhere, Man ] (https://open.kattis.com/problems/everywhere) | Python | 1.3 |
 | [Kemija ] (https://open.kattis.com/problems/kemija08) | Python | 1.3 |
 | [Kindergarten Excursion ] (https://open.kattis.com/problems/excursion) | Java | 3.4 |
@@ -49,7 +51,7 @@ By Rick van Rheenen
 | [Secure doors ] (https://open.kattis.com/problems/securedoors) | Python | 1.9 |
 | [Simon Says ] (https://open.kattis.com/problems/simon) | Java | 1.7 |
 | [Simon Says ] (https://open.kattis.com/problems/simonsays) | Java | 1.4 |
-| [Solving for Carrots ] (https://open.kattis.com/problems/carrots) | Java | 1.3 |
+| [Solving for Carrots ] (https://open.kattis.com/problems/carrots) | Java | 1.2 |
 | [Spavanac ] (https://open.kattis.com/problems/spavanac) | Python | 1.3 |
 | [Speed Limit ] (https://open.kattis.com/problems/speedlimit) | C | 1.3 |
 | [The Easiest Problem Is This One ] (https://open.kattis.com/problems/easiest) | Python | 1.4 |
@@ -57,13 +59,14 @@ By Rick van Rheenen
 | [Trik ] (https://open.kattis.com/problems/trik) | Python | 1.3 |
 | [Troll Hunt ] (https://open.kattis.com/problems/trollhunt) | Java | 3.6 |
 | [What does the fox say? ] (https://open.kattis.com/problems/whatdoesthefoxsay) | Python | 1.7 |
+| [Words for Numbers ] (https://open.kattis.com/problems/wordsfornumbers) | Python | 2.3 |
 
-#### Total solved: 51
-###### Solved in Java: 18(35.29%)
-###### Solved in Python: 27(52.94%)
-###### Solved in C: 6(11.76%)
-#### Average score: 2.05
-#### Total score: 105.5
+#### Total solved: 54
+###### Solved in Java: 18(33.33%)
+###### Solved in Python: 30(55.56%)
+###### Solved in C: 6(11.11%)
+#### Average score: 2.12
+#### Total score: 115.3
 #### Highest difficulty solved
 | Problem | Language | Difficulty |
 | :--- | :---: | :---: |
@@ -73,6 +76,8 @@ By Rick van Rheenen
 | Problem | Language |
 | :--- | :---: |
 | [A Different List Game ] (https://open.kattis.com/problems/listgame2) | Java |
+| [Airline Hub ] (https://open.kattis.com/problems/airlinehub) | Python |
 | [Cat And Mouse ] (https://open.kattis.com/problems/catmouse) | Java |
+| [Fibonacci Words ] (https://open.kattis.com/problems/fibonacci) | Python |
 | [Verify This, Your Majesty ] (https://open.kattis.com/problems/queens) | Java |
 
