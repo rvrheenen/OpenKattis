@@ -17,6 +17,7 @@ By Rick van Rheenen
 | [Another Candies ] (https://open.kattis.com/problems/anothercandies) | Python | 2.5 |
 | [Apaxiaaaaaaaaaaaans! ] (https://open.kattis.com/problems/apaxiaaans) | Python | 1.3 |
 | [Army Strength (Easy) ] (https://open.kattis.com/problems/armystrengtheasy) | Python | 1.8 |
+| [Army Strength (Hard) ] (https://open.kattis.com/problems/armystrengthhard) | Python | 2.3 |
 | [Babelfish ] (https://open.kattis.com/problems/babelfish) | Java | 1.7 |
 | [Booking a Room ] (https://open.kattis.com/problems/bookingaroom) | Java | 1.7 |
 | [Bottled-Up Feelings ] (https://open.kattis.com/problems/bottledup) | Python | 2.1 |
@@ -43,13 +44,15 @@ By Rick van Rheenen
 | [Paradox With Averages (Hard) ] (https://open.kattis.com/problems/averageshard) | Java | 3.0 |
 | [Parking ] (https://open.kattis.com/problems/parking) | C | 1.5 |
 | [Pet ] (https://open.kattis.com/problems/pet) | Java | 1.3 |
+| [Pizza Crust ] (https://open.kattis.com/problems/pizza2) | Python | 1.3 |
 | [Planting Trees ] (https://open.kattis.com/problems/plantingtrees) | Python | 1.8 |
-| [Primary Register ] (https://open.kattis.com/problems/register) | C | 2.8 |
+| [Primary Register ] (https://open.kattis.com/problems/register) | C | 2.9 |
 | [Prime Sieve ] (https://open.kattis.com/problems/primesieve) | Java | 3.9 |
 | [Quick Brown Fox ] (https://open.kattis.com/problems/quickbrownfox) | Python | 1.6 |
 | [Reversed Binary Numbers ] (https://open.kattis.com/problems/reversebinary) | Java | 1.3 |
+| [Rečenice ] (https://open.kattis.com/problems/recenice) | Python | 2.3 |
 | [Secure doors ] (https://open.kattis.com/problems/securedoors) | Python | 1.9 |
-| [Simon Says ] (https://open.kattis.com/problems/simon) | Java | 1.7 |
+| [Simon Says ] (https://open.kattis.com/problems/simon) | Java | 1.8 |
 | [Simon Says ] (https://open.kattis.com/problems/simonsays) | Java | 1.4 |
 | [Solving for Carrots ] (https://open.kattis.com/problems/carrots) | Java | 1.2 |
 | [Spavanac ] (https://open.kattis.com/problems/spavanac) | Python | 1.3 |
@@ -61,12 +64,12 @@ By Rick van Rheenen
 | [What does the fox say? ] (https://open.kattis.com/problems/whatdoesthefoxsay) | Python | 1.7 |
 | [Words for Numbers ] (https://open.kattis.com/problems/wordsfornumbers) | Python | 2.3 |
 
-#### Total solved: 54
-###### Solved in Java: 18(33.33%)
-###### Solved in Python: 30(55.56%)
-###### Solved in C: 6(11.11%)
-#### Average score: 2.12
-#### Total score: 115.3
+#### Total solved: 57
+###### Solved in Java: 18(31.58%)
+###### Solved in Python: 33(57.89%)
+###### Solved in C: 6(10.53%)
+#### Average score: 2.11
+#### Total score: 121.4
 #### Highest difficulty solved
 | Problem | Language | Difficulty |
 | :--- | :---: | :---: |
@@ -79,5 +82,4 @@ By Rick van Rheenen
 | [Airline Hub ] (https://open.kattis.com/problems/airlinehub) | Python |
 | [Cat And Mouse ] (https://open.kattis.com/problems/catmouse) | Java |
 | [Fibonacci Words ] (https://open.kattis.com/problems/fibonacci) | Python |
-| [Verify This, Your Majesty ] (https://open.kattis.com/problems/queens) | Java |
 

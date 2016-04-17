@@ -73,20 +73,22 @@ def parse_aligns(align):
 
 def get_problems():
     '''finds all problems as Problems adds them to ProblemsList and returns ProblemsList'''
+    known_languages = "C C# C++ Go Haskell Java Javascript Objective-C PHP Prolog Python Ruby".split()
     problems = ProblemsList()
     for lang in get_folders():
-        for problem_folder in get_folders(lang):
-            listdir = os.listdir(get_path([lang,problem_folder]))
-            if ".ignore" in listdir:
-                continue
-            solved = False if ".unsolved" in listdir else True
-            problems.add(Problem(problem_folder, lang, solved))
+        if lang in known_languages:
+            for problem_folder in get_folders(lang):
+                listdir = os.listdir(get_path([lang,problem_folder]))
+                if ".ignore" in listdir:
+                    continue
+                solved = False if ".unsolved" in listdir else True
+                problems.add(Problem(problem_folder, lang, solved))
     return problems
 
 def get_path(dir = None, path = None):
-    '''Gets path from given dir and path. If none given returns root of file. '''
+    '''Gets path from given dir and path. If none given returns root of file. Assumes root is parent directory.'''
     if path == None:
-        path = os.path.dirname(os.path.realpath(__file__))
+        path = os.path.abspath(".")
     if dir != None:
         if type(dir) == str:
             dir = [dir]
@@ -101,7 +103,10 @@ def get_folders(folder = None):
 
 def get_ignores():
     '''Gets all entries in the .gitignore, returns as list'''
-    return [x.rstrip(os.sep) for x in open(get_path('.gitignore'),'r').read().splitlines()]
+    try:
+        return [x.rstrip(os.sep) for x in open(get_path('.gitignore'),'r').read().splitlines()]
+    except (OSError, IOError):
+        return []
 
 
 class Problem:
