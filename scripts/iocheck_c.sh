@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #detect names of file and input files
-filename=($(ls *.java))
+filename=($(ls *.c))
 testdataname=($(ls *.in))
 
-javac $filename
+gcc $filename -o ${filename%.java}.o 
 
 for f in "${testdataname[@]}"; do
     if [ -n "$filename" ] && [ -n "$testdataname" ]
@@ -14,7 +14,7 @@ for f in "${testdataname[@]}"; do
       dataname=${f%.in}
       
       #run
-      if java $basename < $testdataname > $dataname.output
+      if ./$basename.o < $testdataname > $dataname.output
         then
 
         #diff the judge's output and the program output

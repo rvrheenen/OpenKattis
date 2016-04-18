@@ -17,13 +17,13 @@ for f in "${testdataname[@]}"; do
         then
 
         #diff the judge's output and the program output
-        diffResult="$(diff -b $dataname.out $dataname.output)"
+        diffResult="$(diff -b $dataname.ans $dataname.output)"
       
         if [ -n "$diffResult" ]
           then
             echo $f
             echo $diffResult
-            echo "Solution is not correct."
+            echo "Solution $dataname is not correct."
           else
             echo "Solution is correct."
         fi
