@@ -31,7 +31,7 @@ def make_readme(problems):
     print("#### Total solved: " + str(solved_amount))
 
     for lang in solved_problems.get_distinct_vars("language"):
-        print("###### Solved in " + lang + ": " + str(solved_problems.search("language", lang).count() ) + "(" + str(round((solved_problems.search("language", lang).count() / solved_amount) * 100, 2)) + "%)")
+        print("###### Solved in " + lang + ": " + str(solved_problems.search("language", lang).count() ) + " (" + str(round((solved_problems.search("language", lang).count() / solved_amount) * 100, 2)) + "%)")
     
     print("#### Average score: " + str(round(solved_problems.get_total_score()/solved_problems.count(),2)) )
     print("#### Total score: " + str(1 + solved_problems.get_total_score()))
