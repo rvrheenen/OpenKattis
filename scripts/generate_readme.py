@@ -1,14 +1,19 @@
 ########################################################################
-## File name: rmgen.py                                                ##
+## File name: generate_readme.py                                      ##
 ## Author: Rick van Rheenen                                           ##
 ## Date created: 2016-04-14                                           ##
 ## Date last modified: 2016-04-16                                     ##
 ## Description: README.MD generator for OpenKattis github repository  ##
 ########################################################################
 ##
+## Instructions: 
+##      Execute from the root of the OpenKattis Folder containing 
+##      the language folders which contain the problems. 
+##      EG: python3 scripts/generate_readme.py > README.MD   
+##
 ## TODO: 
 ##      - catch failed cUrls
-##
+##      - document this script..
 
 import os
 import io
