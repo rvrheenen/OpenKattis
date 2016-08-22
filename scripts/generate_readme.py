@@ -44,6 +44,11 @@ def make_readme(problems):
 def main():
     make_readme(get_problems().sort())
 
+def debug():
+    problems = ProblemsList()
+    problems.add(Problem("hello", "Python", True))
+    make_readme(problems)
+
 def make_table(head, rows, aligns=None, title=None):
     '''Generates a table with given input, returns String'''
     if len(rows.problems if isinstance(rows, ProblemsList) else rows) < 1:
@@ -152,6 +157,7 @@ class Problem:
         c = pycurl.Curl()
         c.setopt(c.URL, url)
         c.setopt(c.WRITEFUNCTION, e.write)
+        c.setopt(pycurl.USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; it; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 (.NET CLR 3.5.30729)') #prevents browser banning
         c.perform()
         c.close()
 
