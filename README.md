@@ -10,11 +10,11 @@ By Rick van Rheenen
 | [A Different Problem ] (https://open.kattis.com/problems/different) | Python | 2.0 |
 | [A List Game ] (https://open.kattis.com/problems/listgame) | C | 3.0 |
 | [A Real Challenge ] (https://open.kattis.com/problems/areal) | Python | 1.4 |
-| [A Towering Problem ] (https://open.kattis.com/problems/towering) | Python | 1.8 |
+| [A Towering Problem ] (https://open.kattis.com/problems/towering) | Python | 1.9 |
 | [ACM Contest Scoring ] (https://open.kattis.com/problems/acm) | Java | 1.4 |
-| [ASCII Figure Rotation ] (https://open.kattis.com/problems/asciifigurerotation) | Python | 2.9 |
+| [ASCII Figure Rotation ] (https://open.kattis.com/problems/asciifigurerotation) | Python | 3.0 |
 | [Aaah! ] (https://open.kattis.com/problems/aaah) | Python | 1.5 |
-| [Adding Words ] (https://open.kattis.com/problems/addingwords) | Python | 5.3 |
+| [Adding Words ] (https://open.kattis.com/problems/addingwords) | Python | 5.2 |
 | [Alphabet Spam ] (https://open.kattis.com/problems/alphabetspam) | Python | 1.4 |
 | [An Industrial Spy ] (https://open.kattis.com/problems/industrialspy) | Java | 3.2 |
 | [Another Candies ] (https://open.kattis.com/problems/anothercandies) | Python | 2.6 |
@@ -37,7 +37,7 @@ By Rick van Rheenen
 | [Cryptographer's Conundrum ] (https://open.kattis.com/problems/conundrum) | Python | 1.3 |
 | [Detailed Differences ] (https://open.kattis.com/problems/detaileddifferences) | Python | 1.4 |
 | [Dice Game ] (https://open.kattis.com/problems/dicegame) | Python | 1.4 |
-| [Eight Queens ] (https://open.kattis.com/problems/8queens) | Java | 3.2 |
+| [Eight Queens ] (https://open.kattis.com/problems/8queens) | Java | 3.0 |
 | [Eligibility ] (https://open.kattis.com/problems/eligibility) | Python | 1.3 |
 | [Engineering English ] (https://open.kattis.com/problems/engineeringenglish) | Python | 2.2 |
 | [Erase Securely ] (https://open.kattis.com/problems/erase) | Java | 1.6 |
@@ -45,7 +45,7 @@ By Rick van Rheenen
 | [Flying Safely ] (https://open.kattis.com/problems/flyingsafely) | Python | 2.0 |
 | [Goblin Garden Guards ] (https://open.kattis.com/problems/goblingardenguards) | C | 6.5 |
 | [Growling Gears ] (https://open.kattis.com/problems/growlinggears) | Python | 2.7 |
-| [Hay Points ] (https://open.kattis.com/problems/haypoints) | Python | 2.3 |
+| [Hay Points ] (https://open.kattis.com/problems/haypoints) | Python | 2.2 |
 | [Hello World! ] (https://open.kattis.com/problems/hello) | Python | 1.2 |
 | [High Score ] (https://open.kattis.com/problems/highscore) | Python | 5.9 |
 | [I've Been Everywhere, Man ] (https://open.kattis.com/problems/everywhere) | Python | 1.3 |
@@ -61,7 +61,7 @@ By Rick van Rheenen
 | [Marko ] (https://open.kattis.com/problems/marko) | Python | 2.3 |
 | [Mixed Fractions ] (https://open.kattis.com/problems/mixedfractions) | Python | 1.4 |
 | [Modulo ] (https://open.kattis.com/problems/modulo) | C | 1.3 |
-| [Natrij ] (https://open.kattis.com/problems/natrij) | Python | 2.6 |
+| [Natrij ] (https://open.kattis.com/problems/natrij) | Python | 2.5 |
 | [Not Amused ] (https://open.kattis.com/problems/notamused) | Python | 1.8 |
 | [Odd Man Out ] (https://open.kattis.com/problems/oddmanout) | Python | 1.4 |
 | [Oddities ] (https://open.kattis.com/problems/oddities) | Python | 1.3 |
@@ -73,7 +73,7 @@ By Rick van Rheenen
 | [Pizza Crust ] (https://open.kattis.com/problems/pizza2) | Python | 1.3 |
 | [Planting Trees ] (https://open.kattis.com/problems/plantingtrees) | Python | 1.7 |
 | [Pot ] (https://open.kattis.com/problems/pot) | Python | 1.3 |
-| [Primary Register ] (https://open.kattis.com/problems/register) | C | 3.0 |
+| [Primary Register ] (https://open.kattis.com/problems/register) | C | 3.5 |
 | [Prime Sieve ] (https://open.kattis.com/problems/primesieve) | Java | 4.1 |
 | [Ptice ] (https://open.kattis.com/problems/ptice) | Python | 1.3 |
 | [Quick Brown Fox ] (https://open.kattis.com/problems/quickbrownfox) | Python | 1.6 |
@@ -81,7 +81,7 @@ By Rick van Rheenen
 | [Repeating Decimal ] (https://open.kattis.com/problems/repeatingdecimal) | Java | 2.9 |
 | [Reverse Rot ] (https://open.kattis.com/problems/reverserot) | Python | 1.4 |
 | [Reversed Binary Numbers ] (https://open.kattis.com/problems/reversebinary) | Java | 1.3 |
-| [Rečenice ] (https://open.kattis.com/problems/recenice) | Python | 2.4 |
+| [Rečenice ] (https://open.kattis.com/problems/recenice) | Python | 2.3 |
 | [Riječi ] (https://open.kattis.com/problems/rijeci) | Python | 1.4 |
 | [Santa Klas ] (https://open.kattis.com/problems/santaklas) | Python | 2.9 |
 | [Secure Doors ] (https://open.kattis.com/problems/securedoors) | Python | 1.8 |
@@ -104,7 +104,7 @@ By Rick van Rheenen
 | [Volim ] (https://open.kattis.com/problems/volim) | Python | 1.4 |
 | [WERTYU ] (https://open.kattis.com/problems/wertyu) | Python | 2.5 |
 | [What does the fox say? ] (https://open.kattis.com/problems/whatdoesthefoxsay) | Python | 1.8 |
-| [Words for Numbers ] (https://open.kattis.com/problems/wordsfornumbers) | Python | 2.5 |
+| [Words for Numbers ] (https://open.kattis.com/problems/wordsfornumbers) | Python | 2.2 |
 | [Zamka ] (https://open.kattis.com/problems/zamka) | Python | 1.3 |
 
 #### Total solved: 100
@@ -112,7 +112,7 @@ By Rick van Rheenen
 ###### Solved in Python: 73 (73.0%)
 ###### Solved in C: 6 (6.0%)
 #### Average score: 2.02
-#### Total score: 203.3
+#### Total score: 203.1
 #### Highest difficulty solved
 | Problem | Language | Difficulty |
 | :--- | :---: | :---: |
