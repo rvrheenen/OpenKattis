@@ -14,7 +14,7 @@ for f in "${testdataname[@]}"; do
       dataname=${f%.in}
       
       #run
-      if java $basename < $testdataname > $dataname.output
+      if java $basename < $f > $dataname.output
         then
 
         #diff the judge's output and the program output
