@@ -6,7 +6,7 @@ By Rick van Rheenen
 #### Solved Problems:
 | Problem | Language | Difficulty |
 | :--- | :---: | :---: |
-| [2048 ] (https://open.kattis.com/problems/2048) | Java | 2.0 |
+| [2048 ] (https://open.kattis.com/problems/2048) | Java | 2.1 |
 | [A Different Problem ] (https://open.kattis.com/problems/different) | Python | 2.3 |
 | [A List Game ] (https://open.kattis.com/problems/listgame) | C | 3.1 |
 | [A Real Challenge ] (https://open.kattis.com/problems/areal) | Python | 1.4 |
@@ -14,7 +14,7 @@ By Rick van Rheenen
 | [ACM Contest Scoring ] (https://open.kattis.com/problems/acm) | Java | 1.3 |
 | [ASCII Figure Rotation ] (https://open.kattis.com/problems/asciifigurerotation) | Python | 3.7 |
 | [Aaah! ] (https://open.kattis.com/problems/aaah) | Python | 1.5 |
-| [Adding Words ] (https://open.kattis.com/problems/addingwords) | Python | 4.8 |
+| [Adding Words ] (https://open.kattis.com/problems/addingwords) | Python | 4.7 |
 | [Alphabet Spam ] (https://open.kattis.com/problems/alphabetspam) | Python | 1.4 |
 | [Amalgamated Artichokes ] (https://open.kattis.com/problems/artichoke) | Java | 2.0 |
 | [An Industrial Spy ] (https://open.kattis.com/problems/industrialspy) | Java | 3.0 |

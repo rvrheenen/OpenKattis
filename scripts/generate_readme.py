@@ -14,6 +14,7 @@
 ## TODO: 
 ##      - catch failed cUrls
 ##      - document this script..
+##      - seriously, document this script!
 
 import os
 import io
@@ -212,6 +213,8 @@ class ProblemsList:
 
     def sort(self, sortby="name", rv=False):
         '''Sorts the ProblemsList, returns self'''
+        if self.count() == 0:
+            return self
         if not hasattr(self.get_random(), sortby):
             sortby = "id"
         self.problems = sorted(self.problems, key=attrgetter(sortby), reverse=rv)
@@ -243,6 +246,8 @@ class ProblemsList:
 
     def get_random(self):
         '''Returns random Problem'''
-        return self.problems[random.randrange(0, self.count())]
+        if self.count() > 0:
+            return self.problems[random.randrange(0, self.count())]
+        return None
 
 if __name__ == "__main__": main()
