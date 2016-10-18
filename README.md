@@ -95,7 +95,6 @@ By Rick van Rheenen
 | [Simple Addition ] (https://open.kattis.com/problems/simpleaddition) | Python | 1.9 |
 | [Skener ] (https://open.kattis.com/problems/skener) | Python | 1.4 |
 | [Solving for Carrots ] (https://open.kattis.com/problems/carrots) | Java | 1.2 |
-| [Sort of Sorting ] (https://open.kattis.com/problems/sortofsorting) | Python | 3.4 |
 | [Spavanac ] (https://open.kattis.com/problems/spavanac) | Python | 1.3 |
 | [Speed Limit ] (https://open.kattis.com/problems/speedlimit) | C | 1.3 |
 | [Stand on Zanzibar ] (https://open.kattis.com/problems/zanzibar) | Python | 1.4 |
@@ -114,28 +113,29 @@ By Rick van Rheenen
 | [Words for Numbers ] (https://open.kattis.com/problems/wordsfornumbers) | Python | 2.1 |
 | [Zamka ] (https://open.kattis.com/problems/zamka) | Python | 1.4 |
 
-#### Total solved: 107
-###### Solved in Java: 26 (24.3%)
-###### Solved in Python: 75 (70.09%)
-###### Solved in C: 6 (5.61%)
-#### Average score: 2.07
-#### Total score: 222.0
+#### Total solved: 106
+###### Solved in Java: 26 (24.53%)
+###### Solved in Python: 74 (69.81%)
+###### Solved in C: 6 (5.66%)
+#### Average score: 2.05
+#### Total score: 218.6
 #### Highest difficulty solved
 | Problem | Language | Difficulty |
 | :--- | :---: | :---: |
 | [Goblin Garden Guards ] (https://open.kattis.com/problems/goblingardenguards) | C | 6.6 |
 
 #### Unsolved Problems:
-| Problem | Language |
+| Problem | Language | Difficulty |
 | :--- | :---: |
-| [A Different List Game ] (https://open.kattis.com/problems/listgame2) | Python |
-| [Airline Hub ] (https://open.kattis.com/problems/airlinehub) | Python |
-| [All Pairs Shortest Path ] (https://open.kattis.com/problems/allpairspath) | Java |
-| [Almost Union-Find ] (https://open.kattis.com/problems/almostunionfind) | Java |
-| [Cat And Mouse ] (https://open.kattis.com/problems/catmouse) | Java |
-| [Esej ] (https://open.kattis.com/problems/esej) | Python |
-| [Fibonacci Words ] (https://open.kattis.com/problems/fibonacci) | Python |
-| [Flip Five ] (https://open.kattis.com/problems/flipfive) | Python |
-| [Oop ] (https://open.kattis.com/problems/oop) | Java |
-| [Phone List ] (https://open.kattis.com/problems/phonelist) | Python |
+| [Flip Five ] (https://open.kattis.com/problems/flipfive) | Python | 2.6 |
+| [Phone List ] (https://open.kattis.com/problems/phonelist) | Python | 3.4 |
+| [Sort of Sorting ] (https://open.kattis.com/problems/sortofsorting) | Python | 3.4 |
+| [Esej ] (https://open.kattis.com/problems/esej) | Python | 3.9 |
+| [Fibonacci Words ] (https://open.kattis.com/problems/fibonacci) | Python | 5.5 |
+| [Airline Hub ] (https://open.kattis.com/problems/airlinehub) | Python | 5.6 |
+| [All Pairs Shortest Path ] (https://open.kattis.com/problems/allpairspath) | Java | 6.8 |
+| [Cat And Mouse ] (https://open.kattis.com/problems/catmouse) | Java | 7.9 |
+| [Oop ] (https://open.kattis.com/problems/oop) | Java | 8.3 |
+| [Almost Union-Find ] (https://open.kattis.com/problems/almostunionfind) | Java | 8.5 |
+| [A Different List Game ] (https://open.kattis.com/problems/listgame2) | Python | 9.1 |
 
