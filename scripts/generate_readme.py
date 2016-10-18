@@ -44,7 +44,7 @@ def make_readme(problems):
     highest = solved_problems.search("difficulty", str(max([float(x[0]) for x in solved_problems.get("difficulty")])) ) 
     print(make_table(["Problem", "Language", "Difficulty"], highest.get(["link", "language", "difficulty"]), None, "Highest difficulty solved"))
     
-    print(make_table(["Problem", "Language"], problems.search("solved", False).get(["link", "language"]), "lm", "Unsolved Problems:"))
+    print(make_table(["Problem", "Language", "Difficulty"], problems.search("solved", False).sort("difficulty").get(["link", "language", "difficulty"]), "lmm", "Unsolved Problems:"))
 
 def main():
     make_readme(get_problems().sort())
