@@ -126,7 +126,7 @@ By Rick van Rheenen
 
 #### Unsolved Problems:
 | Problem | Language | Difficulty |
-| :--- | :---: |
+| :--- | :---: | :---: |
 | [Flip Five ] (https://open.kattis.com/problems/flipfive) | Python | 2.6 |
 | [Phone List ] (https://open.kattis.com/problems/phonelist) | Python | 3.4 |
 | [Sort of Sorting ] (https://open.kattis.com/problems/sortofsorting) | Python | 3.4 |
