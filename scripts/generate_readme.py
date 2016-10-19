@@ -11,6 +11,11 @@
 ##      the language folders which contain the problems. 
 ##      EG: python3 scripts/generate_readme.py > README.MD   
 ##
+## Changelog:
+##      2016-19-10: 
+##          Add possibility to get first n problems in a problemslist.
+##          Highest rating problem changed to top3.
+##      
 ## TODO: 
 ##      - catch failed cUrls
 ##      - document this script..
@@ -42,9 +47,8 @@ def make_readme(problems):
     print("#### Average score: " + str(round(solved_problems.get_total_score()/solved_problems.count(),2)) )
     print("#### Total score: " + str(1 + solved_problems.get_total_score()))
     
-    highest = solved_problems.search("difficulty", str(max([float(x[0]) for x in solved_problems.get("difficulty")])) ) 
-    print(make_table(["Problem", "Language", "Difficulty"], highest.get(["link", "language", "difficulty"]), None, "Highest difficulty solved"))
-    
+    # highest = solved_problems.search("difficulty", str(max([float(x[0]) for x in solved_problems.get("difficulty")])) ) 
+    print(make_table(["Problem", "Language", "Difficulty"], solved_problems.sort("difficulty", True).get(["link", "language", "difficulty"], 3), None, "Top 3 highest difficulty solved"))
     print(make_table(["Problem", "Language", "Difficulty"], problems.search("solved", False).sort("difficulty").get(["link", "language", "difficulty"]), "lmm", "Unsolved Problems:"))
 
 def main():
@@ -207,9 +211,9 @@ class ProblemsList:
         '''Add Problem to the list'''
         self.problems.append(problem)
     
-    def get(self, atrrs = None):
-        '''Get all problem, with all (default) or only a few of its attributes, returns list of Problems.get()'''
-        return [p.get(atrrs) for p in self.problems]
+    def get(self, atrrs = None, amount=0):
+        '''Get all (default) or <amount> problems, with all (default) or only a few of its attributes, returns list of Problems.get()'''
+        return [p.get(atrrs) for p in self.problems][:(amount if amount > 0 else self.count())]
 
     def sort(self, sortby="name", rv=False):
         '''Sorts the ProblemsList, returns self'''
