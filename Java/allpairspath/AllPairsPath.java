@@ -12,17 +12,17 @@ public class AllPairsPath {
     public static final int INF = 1000000;
 
     public static void main(String[] args) {
-    	
-    	IO io = new IO(System.in);
-    	boolean firstRun = true;
-    	int nodes, edges, queries, dist;
-        int tmp_a, tmp_b;
+        
+        IO io = new IO(System.in);
+        boolean firstRun = true;
+        int nodes, edges, queries, tmp_x, tmp_y;
+        long dist;
 
-    	try {
-    		while(true) {
-		    	nodes = io.nextInt();
-		    	edges = io.nextInt();
-		    	queries = io.nextInt();
+        try {
+            while(true) {
+                nodes = io.nextInt();
+                edges = io.nextInt();
+                queries = io.nextInt();
 
                 // check for quiting input
                 if (nodes == 0 && edges == 0 && queries == 0) {
@@ -35,56 +35,73 @@ public class AllPairsPath {
                 } else {
                     System.out.println();
                 }
-		        
+                
                 // Create empty graph and fill it with arbitrary high numbers
-		        int[][] graph = new int[nodes][nodes];
-		        for (int i = 0; i < nodes; i++) {
-		            Arrays.fill(graph[i], INF);
-		        }
+                long[][] graph = new long[nodes][nodes];
+                for (int i = 0; i < nodes; i++) {
+                    Arrays.fill(graph[i], INF);
+                }
                 
                 // enter edges into graph
                 for (int i = 0; i < edges; i++) {
-                    graph[io.nextInt()][io.nextInt()] = io.nextInt();
+                    tmp_x = io.nextInt();
+                    tmp_y = io.nextInt();
+                    graph[tmp_x][tmp_y] = Math.min(io.nextLong(), graph[tmp_x][tmp_y]);
                 }
                 
                 // map nodes 0 to themselves, done after entering the edges to remove edges that map more than 0 to themselves
                 for (int i = 0; i < nodes; i++) {
-		            graph[i][i] = 0;
-		        }
+                    graph[i][i] = 0;
+                }
                 
                 // apply floydWarshall
-		        int[][] res = floydWarshall(graph);
-                printArray(res);
-		        
+                long[][] res = floydWarshall(graph);
+                
+                // Check for negative cycles
+                for (int i = 0; i < nodes; i++) {
+                    if (res[i][i] < 0) {
+                        res[i][i] = -INF; // i is in a negative cycle
+                        for (int j = 0; j < nodes; j++) {
+                            for (int k = 0; k < nodes; k++) {
+                                if (res[j][i] < INF && res[i][k] < INF) {
+                                    res[j][k] = -INF; // pairs using i are also negative
+                                }
+                            }
+                        }
+                    }
+                }
+                
                 // process queries
-		        for (int i = 0; i < queries; i++) {
-		        	dist = res[io.nextInt()][io.nextInt()];
-                    if (dist == INF) {
-		        		System.out.println("Impossible");		        		
-		        	} else if (dist < 0) {
-		        		System.out.println("-Infinity");
-		        	} else {
-		        		System.out.println(dist);
-		        	}
-		        }
-    		}
+                for (int i = 0; i < queries; i++) {
+                    dist = res[io.nextInt()][io.nextInt()];
+                    if (dist >= INF) {
+                        System.out.println("Impossible");                        
+                    } else if (dist <= -INF) {
+                        System.out.println("-Infinity");
+                    } else {
+                        System.out.println(dist);
+                    }
+                }
+            }
         
-    	} catch(IOException e) {
-    		System.exit(0);
-    	}
+        } catch(IOException e) {
+            System.exit(0);
+        }
 
         io.close();
     }
     
-    static int[][] floydWarshall(int[][] graph) {
+    static long[][] floydWarshall(long[][] graph) {
         int nodes = graph.length;
-        int dist[][] = graph.clone();
+        long dist[][] = graph.clone();
 
         for (int k = 0; k < nodes; k++) {
             for (int i = 0; i < nodes; i++) {
                 for (int j = 0; j < nodes; j++) {
-                    if (dist[i][k] + dist[k][j] < dist[i][j]) {
-                        dist[i][j] = dist[i][k] + dist[k][j];
+                    if (dist[i][k] != INF && dist[k][j] != INF) {
+                        if (dist[i][k] + dist[k][j] < dist[i][j]) {
+                            dist[i][j] = dist[i][k] + dist[k][j];
+                        }
                     }
                 }
             }
@@ -92,42 +109,42 @@ public class AllPairsPath {
         return dist;
     }
 
-    static void printArray(int[][] array) {
-        for (int[] e: array) {
-            for (int f: e) {
-                System.out.printf("%d ", f);
+    static void printArray(long[][] array) {
+        for (long[] e: array) {
+            for (long f: e) {
+                System.out.printf("%.0f ", f);
             }
             System.out.printf("\n");
         }
     }
     
     static class IO extends PrintWriter {
-		static BufferedReader r;
-		static StringTokenizer t;
+        static BufferedReader r;
+        static StringTokenizer t;
 
-		public IO(InputStream i) {
-			super(new BufferedOutputStream(System.out));
-			r = new BufferedReader(new InputStreamReader(i));
-			t = new StringTokenizer("");
-		}
+        public IO(InputStream i) {
+            super(new BufferedOutputStream(System.out));
+            r = new BufferedReader(new InputStreamReader(i));
+            t = new StringTokenizer("");
+        }
 
-		public String next() throws IOException {
-			while (!t.hasMoreTokens()) {
-				t = new StringTokenizer(r.readLine());
-			}
-			return t.nextToken();
-		}
+        public String next() throws IOException {
+            while (!t.hasMoreTokens()) {
+                t = new StringTokenizer(r.readLine());
+            }
+            return t.nextToken();
+        }
 
-		public int nextInt() throws IOException{
-			return Integer.parseInt(next());
-		}
+        public int nextInt() throws IOException{
+            return Integer.parseInt(next());
+        }
 
-		public long nextLong() throws IOException {
-			return Long.parseLong(next());
-		}
+        public long nextLong() throws IOException {
+            return Long.parseLong(next());
+        }
 
-		public double nextDouble() throws IOException {
-			return Double.parseDouble(next());
-		}
-	}
+        public double nextDouble() throws IOException {
+            return Double.parseDouble(next());
+        }
+    }
 }
