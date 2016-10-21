@@ -1,4 +1,6 @@
 .DS_Store
 secret/
 *.class
-
+*.in
+*.ans
+*.c.o
