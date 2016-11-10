@@ -5,12 +5,10 @@
 
 [&copy;](https://github.com/rvrheenen/OpenKattis/blob/master/license.txt) Rick van Rheenen
 ## Summary
-#### Total solved: 147
-###### Solved in Java: 39 (26.53%) - [Total: 104.50, Average: 2.68]
-###### Solved in Python: 99 (67.35%) - [Total: 189.30, Average: 1.91]
+#### Problems solved: 147 - [Total: 327.0, Average: 2.22]
+###### Solved in Java: 39 (26.53%) - [Total: 104.5, Average: 2.68]
+###### Solved in Python: 99 (67.35%) - [Total: 189.3, Average: 1.91]
 ###### Solved in C: 9 (6.12%) - [Total: 32.20, Average: 3.58]
-#### Average score: 2.22
-#### Total score: 327.00
 #### Top 3 highest difficulty solved
 | Problem | Language | Difficulty |
 | :--- | :---: | :---: |
