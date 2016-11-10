@@ -1,12 +1,30 @@
 import java.io.*;
 import java.util.*;
 
-public class Template {
+// Works, but too slow, like expected
+public class CookieSelection {
 
 	public static void main(String[] args) throws IOException {
 		IO io = new IO(System.in);
 
+		List<Integer> cookies = new ArrayList<Integer>();
+		String line;
+		int cookie;
 		
+		while ((line = io.nextLine()) != null) {
+			if (line.equals("#")) {
+				Collections.sort(cookies);
+				if (cookies.size() % 2 == 0) {
+					cookie = (cookies.size() / 2);
+				} else {
+					cookie = ((cookies.size()) / 2);
+				}
+				io.println(cookies.get(cookie));
+				cookies.remove(cookie);
+			} else {
+				cookies.add(Integer.parseInt(line));
+			}
+		}
 		
 		io.close();
 	}
@@ -20,6 +38,7 @@ public class Template {
 			r = new BufferedReader(new InputStreamReader(i));
 			t = new StringTokenizer("");
 		}
+
         public String nextLine() throws IOException {
             return r.readLine();
         }

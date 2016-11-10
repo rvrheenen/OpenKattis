@@ -106,6 +106,10 @@ public class Bst {
 			t = new StringTokenizer("");
 		}
 
+		public String nextLine() throws IOException {
+			return r.readLine();
+		}
+
 		public String next() throws IOException {
 			while (!t.hasMoreTokens()) {
 				t = new StringTokenizer(r.readLine());
