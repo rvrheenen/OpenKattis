@@ -42,20 +42,25 @@ def make_readme(problems):
     solved_problems = problems.search("solved", True)
     solved_amount = solved_problems.count()
 
-    print("#### Total solved: %s" % (str(solved_amount)))
+    print("#### Problems solved: %d - [Total: %.1f, Average %.2f]" % (\
+        solved_amount, \
+        solved_problems.get_total_score() / solved_problems.count(), \
+        1 + solved_problems.get_total_score() \
+    ))
+    # print("#### Average score: %.2f" % (solved_problems.get_total_score()/solved_problems.count()) )
+    # print("#### Total score: %.2f" % (1 + solved_problems.get_total_score()) )
 
     # Averages per language
     for lang in solved_problems.get_distinct_vars("language"):
         lang_problems = solved_problems.search("language", lang)
-        print("###### Solved in %s: %d (%.2f%%) - [Total: %.2f, Average: %.2f]" % (\
+        print("###### Solved in %s: %d (%.2f%%) - [Total: %.1f, Average: %.2f]" % (\
             lang,\
             lang_problems.count(), \
             round((lang_problems.count() / solved_amount) * 100, 2), \
             lang_problems.get_total_score(), \
-            lang_problems.get_total_score() / lang_problems.count()))
+            lang_problems.get_total_score() / lang_problems.count() \
+        ))
     
-    print("#### Average score: %.2f" % (solved_problems.get_total_score()/solved_problems.count()) )
-    print("#### Total score: %.2f" % (1 + solved_problems.get_total_score()) )
     
     # Top 3:
     print(make_table(["Problem", "Language", "Difficulty"], solved_problems.sort("difficulty", True).get(["link", "language", "difficulty"], 3), None, "Top 3 highest difficulty solved"))
