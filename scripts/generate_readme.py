@@ -44,11 +44,9 @@ def make_readme(problems):
 
     print("#### Problems solved: %d - [Total: %.1f, Average %.2f]" % (\
         solved_amount, \
-        solved_problems.get_total_score() / solved_problems.count(), \
-        1 + solved_problems.get_total_score() \
+        1 + solved_problems.get_total_score(), \
+        solved_problems.get_total_score() / solved_problems.count() \
     ))
-    # print("#### Average score: %.2f" % (solved_problems.get_total_score()/solved_problems.count()) )
-    # print("#### Total score: %.2f" % (1 + solved_problems.get_total_score()) )
 
     # Averages per language
     for lang in solved_problems.get_distinct_vars("language"):
@@ -67,7 +65,7 @@ def make_readme(problems):
     
     print("## Problems")
     # Solved problems list:
-    print(make_table(["Problem", "Language", "Difficulty"], solved_problems.get(["link", "language", "difficulty"]), "lmm", "Solved Problems:"))
+    print(make_table(["Problem", "Language", "Difficulty"], solved_problems.sort().get(["link", "language", "difficulty"]), "lmm", "Solved Problems:"))
     # Unsolved problems list:
     print(make_table(["Problem", "Language", "Difficulty"], problems.search("solved", False).sort("difficulty").get(["link", "language", "difficulty"]), "lmm", "Unsolved Problems:"))
 
