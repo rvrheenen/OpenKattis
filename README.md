@@ -3,7 +3,7 @@
 
 	Please do not steal any of the solutions, for reference use only.
 
-[&copy;](https://github.com/rvrheenen/OpenKattis/blob/master/license.txt) Rick van Rheenen
+	[&copy;](https://github.com/rvrheenen/OpenKattis/blob/master/license.txt) Rick van Rheenen
 ## Summary
 #### Total solved: 2
 ###### Solved in Python: 1 (50.00%) - [Total: 1.20, Average: 1.20]
