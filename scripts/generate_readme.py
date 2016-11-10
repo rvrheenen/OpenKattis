@@ -12,6 +12,9 @@
 ##      EG: python3 scripts/generate_readme.py > README.MD   
 ##
 ## Changelog:
+##      2016-11-10:
+##          Reformat and reorder texts, show points per language
+##      
 ##      2016-19-10: 
 ##          Add possibility to get first n problems in a problemslist.
 ##          Highest rating problem changed to top3.
@@ -31,24 +34,36 @@ from operator import attrgetter
 def make_readme(problems):
     '''print the readme'''
     print("# OpenKattis")
-    print("My solutions to the problems on https://open.kattis.com/.\n")
-    print("By Rick van Rheenen")
-    print("## Problems")
+    print("\tMy solutions to the problems on https://open.kattis.com/.\n")
+    print("\tPlease do not steal any of the solutions, for reference use only.\n")
+    print("[&copy;](https://github.com/rvrheenen/OpenKattis/blob/master/license.txt) Rick van Rheenen")
+    print("## Summary")
 
     solved_problems = problems.search("solved", True)
     solved_amount = solved_problems.count()
 
-    print(make_table(["Problem", "Language", "Difficulty"], solved_problems.get(["link", "language", "difficulty"]), "lmm", "Solved Problems:"))
-    print("#### Total solved: " + str(solved_amount))
+    print("#### Total solved: %s" % (str(solved_amount)))
 
+    # Averages per language
     for lang in solved_problems.get_distinct_vars("language"):
-        print("###### Solved in " + lang + ": " + str(solved_problems.search("language", lang).count() ) + " (" + str(round((solved_problems.search("language", lang).count() / solved_amount) * 100, 2)) + "%)")
+        lang_problems = solved_problems.search("language", lang)
+        print("###### Solved in %s: %d (%.2f%%) - [Total: %.2f, Average: %.2f]" % (\
+            lang,\
+            lang_problems.count(), \
+            round((lang_problems.count() / solved_amount) * 100, 2), \
+            lang_problems.get_total_score(), \
+            lang_problems.get_total_score() / lang_problems.count()))
     
-    print("#### Average score: " + str(round(solved_problems.get_total_score()/solved_problems.count(),2)) )
-    print("#### Total score: " + str(1 + solved_problems.get_total_score()))
+    print("#### Average score: %.2f" % (solved_problems.get_total_score()/solved_problems.count()) )
+    print("#### Total score: %.2f" % (1 + solved_problems.get_total_score()) )
     
-    # highest = solved_problems.search("difficulty", str(max([float(x[0]) for x in solved_problems.get("difficulty")])) ) 
+    # Top 3:
     print(make_table(["Problem", "Language", "Difficulty"], solved_problems.sort("difficulty", True).get(["link", "language", "difficulty"], 3), None, "Top 3 highest difficulty solved"))
+    
+    print("## Problems")
+    # Solved problems list:
+    print(make_table(["Problem", "Language", "Difficulty"], solved_problems.get(["link", "language", "difficulty"]), "lmm", "Solved Problems:"))
+    # Unsolved problems list:
     print(make_table(["Problem", "Language", "Difficulty"], problems.search("solved", False).sort("difficulty").get(["link", "language", "difficulty"]), "lmm", "Unsolved Problems:"))
 
 def main():
@@ -57,6 +72,7 @@ def main():
 def debug():
     problems = ProblemsList()
     problems.add(Problem("hello", "Python", True))
+    problems.add(Problem("bst", "Java", True))
     make_readme(problems)
 
 def make_table(head, rows, aligns=None, title=None):
