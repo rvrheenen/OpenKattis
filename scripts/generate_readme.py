@@ -42,7 +42,7 @@ def make_readme(problems):
     solved_problems = problems.search("solved", True)
     solved_amount = solved_problems.count()
 
-    print("#### Problems solved: %d - [Total: %.1f, Average %.2f]" % (\
+    print("#### Problems solved: %d - [Total: %.1f, Average: %.2f]" % (\
         solved_amount, \
         1 + solved_problems.get_total_score(), \
         solved_problems.get_total_score() / solved_problems.count() \

@@ -5,7 +5,7 @@
 
 [&copy;](https://github.com/rvrheenen/OpenKattis/blob/master/license.txt) Rick van Rheenen
 ## Summary
-#### Problems solved: 147 - [Total: 327.0, Average 2.22]
+#### Problems solved: 147 - [Total: 327.0, Average: 2.22]
 ###### Solved in Java: 39 (26.53%) - [Total: 104.5, Average: 2.68]
 ###### Solved in Python: 99 (67.35%) - [Total: 189.3, Average: 1.91]
 ###### Solved in C: 9 (6.12%) - [Total: 32.2, Average: 3.58]
