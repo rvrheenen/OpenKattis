@@ -1,7 +1,7 @@
-// Works but not fast enough in Java, C does work however.
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+// Works but not fast enough in Java, C does work however.
 public class GoblinGardenGuards {
 
      public static void main(String[] args) {
