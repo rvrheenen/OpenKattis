@@ -49,14 +49,14 @@ def make_readme(problems):
     ))
 
     # Averages per language
-    for lang in solved_problems.get_distinct_vars("language"):
+    for count, lang in sorted({(solved_problems.search("language", l).count(), l) for l in solved_problems.get_distinct_vars("language")} , reverse=True): # sort per amount solved per language
         lang_problems = solved_problems.search("language", lang)
         print("###### Solved in %s: %d (%.2f%%) - [Total: %.1f, Average: %.2f]" % (\
             lang,\
-            lang_problems.count(), \
-            round((lang_problems.count() / solved_amount) * 100, 2), \
+            count, \
+            round((count / solved_amount) * 100, 2), \
             lang_problems.get_total_score(), \
-            lang_problems.get_total_score() / lang_problems.count() \
+            lang_problems.get_total_score() / count \
         ))
     
     
@@ -76,6 +76,7 @@ def debug():
     problems = ProblemsList()
     problems.add(Problem("hello", "Python", True))
     problems.add(Problem("bst", "Java", True))
+    problems.add(Problem("completingthesquare", "Python", True))
     make_readme(problems)
 
 def make_table(head, rows, aligns=None, title=None):
