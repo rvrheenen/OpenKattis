@@ -4,3 +4,4 @@ secret/
 *.in
 *.ans
 *.c.o
+*.cpp.o
