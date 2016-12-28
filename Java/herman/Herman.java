@@ -1,12 +1,16 @@
 import java.io.*;
 import java.util.*;
+import java.lang.Math;
 
-public class Template {
+public class Herman {
 
 	public static void main(String[] args) throws IOException {
 		IO io = new IO(System.in);
 
-		
+		int r = io.nextInt();
+
+		io.println(Math.PI * r * r);
+		io.println((Math.pow(2 * r, 2) ) / 2);
 		
 		io.close();
 	}

@@ -1,12 +1,29 @@
 import java.io.*;
 import java.util.*;
+import java.lang.Math;
 
-public class Template {
+public class HumanCannonBall2 {
 
 	public static void main(String[] args) throws IOException {
 		IO io = new IO(System.in);
 
-		
+		int nCases = io.nextInt();
+
+		double time, height, velocity, angle, distanceToWall, lowerEdge, upperEdge;
+
+		for (int i = 0; i < nCases; i++) {
+			velocity 	   = io.nextDouble();
+			angle 	  	   = Math.toRadians(io.nextDouble());
+			distanceToWall = io.nextDouble();
+			lowerEdge      = io.nextDouble();
+			upperEdge 	   = io.nextDouble();
+
+			time = distanceToWall / (velocity * Math.cos(angle));
+			height = (velocity * time * Math.sin(angle)) - (0.5 * 9.81 * time * time);
+
+			io.println((height > (lowerEdge + 1) && height < (upperEdge - 1)) ? "Safe" : "Not Safe");
+
+		}
 		
 		io.close();
 	}

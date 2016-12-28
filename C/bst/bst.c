@@ -1,5 +1,5 @@
 // Based on java version of this solution
-// This works but is too slow to be accepted, need a smarter approach.
+// This works but is too slow to be accepted, need a smarter approach. See java version
 
 #include <stdio.h>  
 #include <stdlib.h>  

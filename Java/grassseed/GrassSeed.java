@@ -1,13 +1,21 @@
 import java.io.*;
 import java.util.*;
 
-public class Template {
+public class GrassSeed {
 
 	public static void main(String[] args) throws IOException {
 		IO io = new IO(System.in);
 
+		double cost = io.nextDouble();
+		int nLawns = io.nextInt();
 		
-		
+		double total = 0;
+		for (int i = 0; i < nLawns; i++) {
+			total += cost * (io.nextDouble() * io.nextDouble());
+		}
+
+		io.println(total);
+
 		io.close();
 	}
 

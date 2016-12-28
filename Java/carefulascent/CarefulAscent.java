@@ -1,12 +1,25 @@
 import java.io.*;
 import java.util.*;
 
-public class Template {
+public class CarefulAscent {
 
 	public static void main(String[] args) throws IOException {
 		IO io = new IO(System.in);
 
-		
+		int[] firefly = {io.nextInt(), io.nextInt()};
+
+		int nShields = io.nextInt();
+
+		int lowerBound, upperBound, horizontalCovered = 0;
+		double totalCost = 0;
+		for (int i = 0 ; i < nShields; i++) {
+			lowerBound = io.nextInt();
+			upperBound = io.nextInt();
+			horizontalCovered += upperBound - lowerBound;
+			totalCost += (upperBound - lowerBound) * io.nextDouble();
+		}
+		totalCost += firefly[1] - horizontalCovered;
+		io.println(firefly[0] / totalCost);
 		
 		io.close();
 	}
