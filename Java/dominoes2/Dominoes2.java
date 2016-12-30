@@ -23,15 +23,11 @@ public class Dominoes2 {
 				dominoes[io.nextInt() - 1].knocks.add(dominoes[io.nextInt() - 1]);
 			}
 
-			for (int i = 0; i < nKnocked; i++) {
-				dominoes[io.nextInt() - 1].knockOver();
-			}
 			int counter = 0;
-			for (int i = 0; i < nDominoes; i++) {
-				if (!dominoes[i].active) {
-					counter++;
-				}
+			for (int i = 0; i < nKnocked; i++) {
+				counter += dominoes[io.nextInt() - 1].knockOver();
 			}
+			
 			System.out.println(counter);
 		}	
 		
@@ -47,13 +43,16 @@ public class Dominoes2 {
 			knocks = new ArrayList<N>();
 		}
 
-		public void knockOver() {
+		public int knockOver() {
 			if (active) {
 				active = false;
+				int knocked = 1;
 				for (N dom : knocks) {
-					dom.knockOver();
+					knocked += dom.knockOver();
 				}
+				return knocked;
 			}
+			return 0;
 		}
 	}
 
