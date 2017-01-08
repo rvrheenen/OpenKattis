@@ -1,17 +1,26 @@
 import java.io.*;
 import java.util.*;
 
-public class Dominoes2 {
+/**
+ * Problem: given a list of dominos that knock each other over, 
+ * give how many dominos need to be manually knocked over
+ * in order to knock all dominos over.
+ * NB: run with -Xss32m
+ *
+ * Proposed solution: count the weakly connected components
+ * This gives the wrong answer though.
+ */
+
+public class Dominos {
 
 	public static void main(String[] args) throws IOException {
 		IO io = new IO(System.in);
 
 		int nCases = io.nextInt();
-		int nDominoes, nRelations, nKnocked;
+		int nDominoes, nRelations, nKnocked, from, to;
 		for (int c = 0; c < nCases; c++) {
-			nDominoes = io.nextInt();
+			nDominoes  = io.nextInt();
 			nRelations = io.nextInt();
-			nKnocked = io.nextInt();
 
 			N[] dominoes = new N[nDominoes];
 			for (int i = 0; i < nDominoes; i++) {
@@ -20,14 +29,19 @@ public class Dominoes2 {
 
 			E[] relations = new E[nRelations];
 			for (int i = 0; i < nRelations; i++) {
-				dominoes[io.nextInt() - 1].adjacents.add(dominoes[io.nextInt() - 1]);
+				from = io.nextInt() - 1;
+				to = io.nextInt() - 1;
+				dominoes[from].adjacents.add(dominoes[to]);
+				dominoes[to].adjacents.add(dominoes[from]);
 			}
 
 			int counter = 0;
-			for (int i = 0; i < nKnocked; i++) {
-				counter += dominoes[io.nextInt() - 1].knockOver();
+			for (int i = 0 ; i < nDominoes; i++) {
+				if (!dominoes[i].active) continue;
+				counter++;
+				dominoes[i].knockOver();
 			}
-			
+
 			System.out.println(counter);
 		}	
 		
@@ -43,16 +57,13 @@ public class Dominoes2 {
 			adjacents = new ArrayList<N>();
 		}
 
-		public int knockOver() {
+		public void knockOver() {
 			if (active) {
 				active = false;
-				int knocked = 1;
 				for (N dom : adjacents) {
-					knocked += dom.knockOver();
+					dom.knockOver();
 				}
-				return knocked;
 			}
-			return 0;
 		}
 	}
 
