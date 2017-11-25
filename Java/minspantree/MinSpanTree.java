@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class MinSpanTree {
+public class MinSpanTree { // doesn't work, but it really should..
 
 	public static void main(String[] args) throws IOException {
 		IO io = new IO(System.in);
 		int sum;
-		
+
 		while(true) {
 
 			int nV = io.nextInt();
@@ -23,7 +23,6 @@ public class MinSpanTree {
 			for (int j = 0; j < nV; j++) {
 				vertices[j] = new V(j);
 			}
-
 			for (int j = 0; j < nE; j++) {
 				int start = io.nextInt();
 				int end = io.nextInt();
@@ -42,19 +41,27 @@ public class MinSpanTree {
 					sum += result.get(i).w;
 				}
 				io.println(sum);
-				String[] resultStrings = new String[result.size()];
-				for (int i = 0; i < result.size() ; i++) {
-					resultStrings[i] = "" + result.get(i).start.name + " " + result.get(i).end.name;
+
+                Collections.sort(result, new Comparator<E>() {
+                    @Override
+                    public int compare(E e1, E e2) {
+                        if (e1.start.name == e2.start.name) {
+                            return Integer.compare(e1.end.name, e2.end.name);
+                        } else {
+                            return Integer.compare(e1.start.name, e2.start.name);
+                        }
+                    }
+                });
+
+                for (int i = 0; i < result.size(); i++) {
+					io.printf("%d %d\n", result.get(i).start.name, result.get(i).end.name);
 				}
-				Arrays.sort(resultStrings);
-				for (int i = 0; i < result.size(); i++) {
-					io.printf("%s\n", resultStrings[i]);
-				}
+
 			} else {
 				io.println("Impossible");
 			}
 		}
-		
+
 		io.close();
 	}
 
@@ -98,7 +105,7 @@ public class MinSpanTree {
 		for (int i = 0; i < edges.length; i++) {
 			q.add(edges[i]);
 		}
-		
+
 		while (!q.isEmpty()) {
 			E e = q.poll();
 			int start = e.start.name;
@@ -110,38 +117,38 @@ public class MinSpanTree {
 		}
 		return res;
 	}
-	
+
 	static class V {
 		public final int name;
 		public List<E> adj;
-		
+
 		public V(int nm) {
 			name = nm;
 			adj = new ArrayList<E>();
 		}
 	}
-	
+
 	static class E implements Comparable<E>{
 		public final double w;
 		public final V end;
 		public final V start;
-		
+
 		public E(V argStart, V argEnd, double argW) {
 			start = argStart;
 			end = argEnd;
 			w = argW;
 		}
-		
+
 		public int compareTo(E other) {
 			return Double.compare(this.w, other.w);
 		}
 	}
-	
+
 	static class UnionFind {
 		private int[] parent;
 		private int[] rank;
 		public int nSets;
-		
+
 		public UnionFind(int size) {
 			parent = new int[size];
 			rank = new int[size];
@@ -150,15 +157,15 @@ public class MinSpanTree {
 				parent[i] = i;
 			}
 		}
-		
+
 		public void union(int x, int y) {
 			int xRoot = find(x);
 			int yRoot = find(y);
-			
+
 			if (xRoot == yRoot) {
 				return;
 			}
-			
+
 			if (rank[xRoot] < rank[yRoot]) {
 				parent[xRoot] = yRoot;
 			} else if (rank[xRoot] > rank[yRoot]) {
@@ -169,7 +176,7 @@ public class MinSpanTree {
 			}
 			nSets--;
 		}
-		
+
 		public int find(int x) {
 			if (parent[x] != x) {
 				parent[x] = find(parent[x]);

@@ -99,16 +99,25 @@ public class MaxFlow {
 			from = io.nextInt();
 			end = io.nextInt();
 			capacity = io.nextInt();
-			// System.out.printf("%d %d %d\n", from, end, capacity);
+			System.out.printf("%d %d %d\n", from, end, capacity);
 			addEdge(graph, from, end, capacity);
 		}
-		// System.out.println("======<<");
+		System.out.println("======<<");
 		printGraph(graph);
 		System.out.println("======");
-		System.out.println(maxFlow(graph, source, sink));
-		// System.out.println();
-		// System.out.println();
-		printGraphSol(graph);
+        int flow = maxFlow(graph, source, sink);
+
+        int nEdgesUsed = 0;
+        for (ArrayList<Edge> node : graph) {
+			for (Edge e : node) {
+				if (e.flow > 0){
+                    nEdgesUsed++;
+					io.printf("%d %d %d\n", Math.min(e.rev, e.end), Math.max(e.rev, e.end), e.flow);
+				}
+			}
+		}
+        System.out.printf("%d %d %d\n", nNodes, flow, nEdgesUsed);
+        io.close();
 	}
 
 	public static void printGraph(ArrayList<ArrayList<Edge>> graph) {
@@ -122,9 +131,9 @@ public class MaxFlow {
 	public static void printGraphSol(ArrayList<ArrayList<Edge>> graph) {
 		for (ArrayList<Edge> node : graph) {
 			for (Edge e : node) {
-				// if (e.flow > 0){
-					System.out.printf("%d %d %d\n", e.end, e.rev, e.flow);
-				// }
+				if (e.flow > 0){
+					System.out.printf("%d %d %d\n", Math.min(e.rev, e.end), Math.max(e.rev, e.end), e.flow);
+				}
 			}
 		}
 	}
