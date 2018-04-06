@@ -1,0 +1,6 @@
+3 3
+l, r = [int(x) for x in input().split()]
+if l == r:
+    print("Even {}".format(l+r))
+else:
+    print("Odd {}".format(max(l,r)*2))

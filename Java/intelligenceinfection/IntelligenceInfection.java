@@ -85,14 +85,14 @@ public class IntelligenceInfection {
         while (highestReach > 0) {
             highestReach = -1;
             highestSpy = -1;
-            for(Spy spy : spies) {
-                if(!spiesReached[spy.index]) {
+            for (int i = 0 ; i < n_spies; i++) {
+                if(!spiesReached[i]) {
                     cycleReached = new boolean[n_spies];
-                    reach = getReach(spy.index);
-                    if(debug) io.printf("reach of spy %d is %d\n", spy.index, reach);
+                    reach = getReach(i);
+                    if(debug) io.printf("reach of spy %d is %d\n", i, reach);
                     if (reach > highestReach) {
                         highestReach = reach;
-                        highestSpy = spy.index;
+                        highestSpy = i;
                     }
                 }
             }
@@ -104,34 +104,7 @@ public class IntelligenceInfection {
             }
         }
 
-        // find cycles
-        // if(debug) io.println("cycles");
-        // for(Spy spy : spies) {
-        //     if(!spy.reached) {
-        //         cycleReached = new boolean[n_spies];
-        //         foundCycle = -1;
-        //         findCycle(spy.reachedBy, spy.index, spy.index);
-        //         if (foundCycle > -1) {
-        //             if(debug) io.printf("found cycle: %d\n", foundCycle);
-        //             if(debug) io.printf("message spy %d\n", spy.index);
-        //             messages++;
-        //             traverseRest(spies[foundCycle]);
-        //         }
-        //     }
-        // }
-
-        // traverse remaining vertices
-        // if(debug) io.println("rest");
-        // for(Spy spy : spies) {
-        //     if(!spy.reached) {
-        //         if(debug) io.printf("message spy %d\n", spy.index);
-        //         messages++;
-        //         traverseRest(spy);
-        //     }
-        // }
-
-
-        if(!printEnemylessGraph)io.println(messages);
+        if(!printEnemylessGraph) io.println(messages);
 
 		io.close();
 	}
@@ -149,41 +122,26 @@ public class IntelligenceInfection {
         return found;
     }
 
-    // static void findCycle(List<Integer> adj, Integer index, Integer goal) {
-    //     if (cycleReached[index]) {
-    //         if (index == goal) {
-    //             foundCycle = index;
-    //         }
-    //         return;
-    //     }
-    //     if (foundCycle > -1) return;
-    //     cycleReached[index] = true;
-    //     for (Integer spy : adj) {
-    //         if (spy == -1) continue;
-    //         findCycle(spies[spy].reachedBy, spies[spy].index, goal);
-    //     }
-    // }
-
     static void traverseEnemies(Spy src) {
-        if(debug) io.printf("SPY %d::", src.index);
+        // if(debug) io.printf("SPY %d::", src.index);
         if (!src.isEnemy && !spiesReached[src.index]) {
-            if(debug) io.printf("message %d ||", src.index);
+            // if(debug) io.printf("message %d ||", src.index);
             messages++;
         }
 
-        if(debug) io.printf("remove: ");
+        // if(debug) io.printf("remove: ");
         spiesReached[src.index] = true;
         for (Integer s : src.reaches) {
             spies[s].removeReachedBy(src.index);
-            if(debug) io.printf("%d ", s);
+            // if(debug) io.printf("%d ", s);
         }
 
-        if(debug) io.printf(" traverse: ");
+        // if(debug) io.printf(" traverse: ");
         for( int i = 0 ; i < src.reachedBy.size(); i++) {
             if (src.reachedBy.get(i) == -1) continue;
-            if(debug) io.printf("%d ", spies[src.reachedBy.get(i)].index);
+            // if(debug) io.printf("%d ", spies[src.reachedBy.get(i)].index);
         }
-        if(debug) io.println();
+        // if(debug) io.println();
         for( int i = 0 ; i < src.reachedBy.size(); i++) {
             if (src.reachedBy.get(i) == -1) continue;
             traverseEnemies(spies[src.reachedBy.get(i)]);
@@ -200,7 +158,6 @@ public class IntelligenceInfection {
 
     static class Spy {
         public int index;
-        // public boolean reached = false;
         public boolean isEnemy;
         public List<Integer> reachedBy;
         public List<Integer> reaches;
@@ -211,21 +168,13 @@ public class IntelligenceInfection {
             reaches   = new ArrayList<Integer>();
         }
 
-        void removeReachedBy() {
+        void removeReachedBy() { // not used
             for (Integer spyReached : reaches) {
                 spies[spyReached].reachedBy.removeIf(s -> spies[s].index == this.index);
-            //     Iterator<Integer> iter = spies[spyReached].reachedBy.iterator();
-            //     while (iter.hasNext()){
-            //         Integer reachIt = iter.next();
-            //         if (spies[reachIt].index == this.index) {
-            //             iter.remove(); // remove edges longer than longest found
-            //         }
-            //     }
             }
         }
 
         void removeReachedBy(int index) {
-            // reachedBy.removeIf(s -> spies[s].index == index);
             for (int i = 0; i < reachedBy.size(); i++) {
                 if (reachedBy.get(i) == -1) continue;
                 if (spies[reachedBy.get(i)].index == index) {
