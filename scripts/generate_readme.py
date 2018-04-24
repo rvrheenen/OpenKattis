@@ -6,20 +6,26 @@
 ## Description: README.MD generator for OpenKattis github repository  ##
 ########################################################################
 ##
-## Instructions: 
-##      Execute from the root of the OpenKattis Folder containing 
-##      the language folders which contain the problems. 
-##      EG: python3 scripts/generate_readme.py > README.MD   
+## Instructions:
+##      Execute from the root of the OpenKattis Folder containing
+##      the language folders which contain the problems.
+##      EG: python3 scripts/generate_readme.py > README.MD
 ##
 ## Changelog:
+##      2018-04-24:
+##          Fix urls
+##
+##       2016-11-11:
+##          Applied lots of feedback to layout
+##
 ##      2016-11-10:
 ##          Reformat and reorder texts, show points per language
-##      
-##      2016-19-10: 
+##
+##      2016-10-19:
 ##          Add possibility to get first n problems in a problemslist.
 ##          Highest rating problem changed to top3.
-##      
-## TODO: 
+##
+## TODO:
 ##      - catch failed cUrls
 ##      - document this script..
 ##      - seriously, document this script!
@@ -58,11 +64,11 @@ def make_readme(problems):
             lang_problems.get_total_score(), \
             lang_problems.get_total_score() / count \
         ))
-    
-    
+
+
     # Top 3:
     print(make_table(["Problem", "Language", "Difficulty"], solved_problems.sort("difficulty", True).get(["link", "language", "difficulty"], 3), None, "Top 3 highest difficulty solved"))
-    
+
     print("## Problems")
     # Solved problems list:
     print(make_table(["Problem", "Language", "Difficulty"], solved_problems.sort().get(["link", "language", "difficulty"]), "lmm", "Solved Problems:"))
@@ -85,7 +91,7 @@ def make_table(head, rows, aligns=None, title=None):
         return ''
     table = "#### " + title + "\n" if title != None else ""
     table += make_table_row(head)
-    align = parse_aligns(aligns if aligns != None else ("l" + "m"*(len(head)-1))) 
+    align = parse_aligns(aligns if aligns != None else ("l" + "m"*(len(head)-1)))
     table += make_table_row(align)
     if isinstance(rows, list):
         if not isinstance(rows[0], list):
@@ -169,19 +175,19 @@ class Problem:
             return [getattr(self, x) for x in self.get_var_names()]
         else:
             if type(atrrs) == str:
-                atrrs = [atrrs] 
+                atrrs = [atrrs]
             return [getattr(self, x) for x in atrrs if x in self.get_var_names()]
-    
+
     def get_var_names(self):
         '''Get the names of all this problems variables, returns list'''
         return [x for x in vars(self)]
 
     def scrape_kattis(self, pname=None):
-        ''' Scrapes the OpenKattis site to get the needed data on this problem. 
+        ''' Scrapes the OpenKattis site to get the needed data on this problem.
             Returns list with lists: [atrrname, atrr]
             Current atrrnames: time, memory, difficulty, authors, source and name
         '''
-        
+
         url = 'https://open.kattis.com/problems/' + (pname.lower() if pname != None else self.id)
         e = io.BytesIO()
         c = pycurl.Curl()
@@ -208,13 +214,13 @@ class Problem:
         kattis_attributes.append(["url", url])
         kattis_attributes.append(["name", str(soup.title.string).replace("– Kattis, Kattis", "")])
         return kattis_attributes
-    
+
     def get_flink(self):
         '''Get formatted link, returns string'''
         try:
-            return "[%s] (%s)" % (self.name, self.url) 
+            return "[%s](%s)" % (self.name, self.url)
         except AttributeError:
-            return "[%s] (%s)" % (self.id, self.url) 
+            return "[%s](%s)" % (self.id, self.url)
 
 
 class ProblemsList:
@@ -226,11 +232,11 @@ class ProblemsList:
 
     def __repr__(self):
         return repr(self.problems)
-        
+
     def add(self, problem):
         '''Add Problem to the list'''
         self.problems.append(problem)
-    
+
     def get(self, atrrs = None, amount=0):
         '''Get all (default) or <amount> problems, with all (default) or only a few of its attributes, returns list of Problems.get()'''
         return [p.get(atrrs) for p in self.problems][:(amount if amount > 0 else self.count())]
