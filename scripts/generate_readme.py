@@ -12,6 +12,10 @@
 ##      EG: python3 scripts/generate_readme.py > README.MD
 ##
 ## Changelog:
+##      2018-09-14
+##          Fix bug that Open.Kattis tracks different languages overwrites
+##          local language variable
+##
 ##      2018-04-24:
 ##          Fix urls
 ##
@@ -206,7 +210,7 @@ class Problem:
                 t = p.find_all(text=True)
                 t = [x for x in t if x != "\n"]
                 t[0] = "".join(x for x in t[0].strip().rstrip(':').lower().split(" ")[0] if x not in '(){}<>') #nasty
-                if len(t) < 2 or t[0] in ['problem','license', 'download']:
+                if len(t) < 2 or t[0] in ['problem','license', 'download', 'language']:
                     continue
                 if not t in kattis_attributes:
                     kattis_attributes.append(t)
