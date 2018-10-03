@@ -1,4 +1,3 @@
-#Works but not fast enough
 from collections import deque
 
 BLACK = "*"
@@ -9,7 +8,7 @@ class Node:
     def __init__(self, grid, depth):
         self.content = grid[:]
         self.childeren = []
-        self.depth = depth 
+        self.depth = depth
 
     def __repr__(self):
         return "content:\n" + self.f_grid() + "depth: " +str(self.depth) + "\nchilderen:\n" + self.f_childeren()
@@ -35,18 +34,25 @@ class Node:
             g += "\n"
         return g
 
-def bfs(grid, node):
+def bfs():
+    results = [-1 for _ in range(512)]
+
     q = deque()
-    q.append(node)
-    count = 0
+    q.append(Node(". . . . . . . . .".split(), 0))
+
     while q:
-        count += 1
         node = q.popleft()
-        if node.equals(grid):
-            return node.depth
-        node.make_childeren()
-        for child in node.childeren:
-            q.append(child)
+        node_grid_val = grid_to_num(node.content)
+
+        if results[node_grid_val] == -1:
+            results[node_grid_val] = node.depth
+
+            node.make_childeren()
+            for child in node.childeren:
+                q.append(child)
+
+    return results
+
 
 def mutate_grid(grid, square_to_mutate):
     new_grid = list(grid)
@@ -54,11 +60,20 @@ def mutate_grid(grid, square_to_mutate):
         new_grid[cell] = BLACK if grid[cell] == WHITE else WHITE
     return new_grid
 
-P = int(input())
+def num_to_grid(n):
+    return ["*" if bin == '1' else "." for bin in "{:09b}".format(n)]
 
-for i in range(P):
-    grid = []
-    for j in range(3):
-        grid += [x for x in input()]
-    root = Node(". . . . . . . . .".split(), 0)
-    print(bfs(grid, root))
+def grid_to_num(grid):
+    return int("".join(["1" if g == '*' else "0" for g in grid]), 2)
+
+def main():
+    answers = bfs()
+    P = int(input())
+    for i in range(P):
+        grid = []
+        for j in range(3):
+            grid += [x for x in input()]
+        print(answers[grid_to_num(grid)])
+
+if __name__ == '__main__':
+    main()
