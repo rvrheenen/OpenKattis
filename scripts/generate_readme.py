@@ -11,7 +11,13 @@
 ##      the language folders which contain the problems.
 ##      EG: python3 scripts/generate_readme.py > README.MD
 ##
+##      Problem folders with a .unsolved file in it will be seen as unsolved.
+##      Problem folders with a .ignore file in it will be ignored by script.
+##
 ## Changelog:
+##      2020-04-31
+##          Fix bug that open.kattis can have a score range
+##
 ##      2018-09-14
 ##          Fix bug that Open.Kattis tracks different languages overwrites
 ##          local language variable
@@ -263,10 +269,13 @@ class ProblemsList:
         return ProblemsList([x for x in self.problems if getattr(x, type) == q])
 
     def get_total_score(self, type=None, q=None):
-        '''Count scores of problems, count all if no type and q given, else count score of type=q, return int'''
+        '''Count scores of problems, count all if no type and q given, else count score of type=q, return float'''
         count = 0
         for prob in (self.problems if type == None and q == None else self.search(type, q).problems):
-            count += float(prob.get("difficulty")[0])
+            dif = prob.get("difficulty")[0]
+            if len(dif.split(" ")) > 0:
+                dif = dif.split(" ")[0]
+            count += float(dif)
         return round(count,1)
 
     def get_distinct_vars(self, var):
