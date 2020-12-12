@@ -5,8 +5,6 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-var vars = {}
-
 rl.on('line', (line) => {
     let [empties, found, needed] = line.split(" ").map(x => parseInt(x))
     
