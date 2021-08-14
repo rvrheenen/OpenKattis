@@ -1,20 +1,20 @@
 #!/bin/bash
 
 #detect names of file and input files
-filename=($(ls *.cpp))
+filename=($(ls *.rs))
 testdataname=($(ls *.in))
 
-g++ $filename -o ${filename%.java}.o 
+rustc $filename
 
 for f in "${testdataname[@]}"; do
     if [ -n "$filename" ] && [ -n "$testdataname" ]
       then
       #strip off the extensions
-      basename=${filename%.java}
+      basename=${filename%.rs}
       dataname=${f%.in}
       
       #run
-      if ./$basename.o < $f > $dataname.output
+      if ./$basename < $f > $dataname.output
         then
 
         #diff the judge's output and the program output
