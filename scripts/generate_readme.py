@@ -124,7 +124,7 @@ def parse_aligns(align):
 
 def get_problems():
     '''finds all problems as Problems adds them to ProblemsList and returns ProblemsList'''
-    known_languages = "C C# C++ Go Haskell Java Javascript Objective-C PHP Prolog Python Ruby".split()
+    known_languages = "C C# C++ Go Haskell Java Javascript Objective-C PHP Prolog Python Ruby Rust".split()
     problems = ProblemsList()
     for lang in get_folders():
         if lang in known_languages:
