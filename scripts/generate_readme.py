@@ -15,6 +15,9 @@
 ##      Problem folders with a .ignore file in it will be ignored by script.
 ##
 ## Changelog:
+##      2022-09-06
+##          Update parser to new site layout
+##
 ##      2020-04-31
 ##          Fix bug that open.kattis can have a score range
 ##
@@ -43,7 +46,9 @@
 import os
 import io
 import random
+import sys
 import pycurl
+import re
 from bs4 import BeautifulSoup
 from operator import attrgetter
 
@@ -192,6 +197,11 @@ class Problem:
         '''Get the names of all this problems variables, returns list'''
         return [x for x in vars(self)]
 
+    @staticmethod
+    def clean_kattis_tag(tag):
+        return tag
+        # "".join(x for x in tag.strip().rstrip(':').lower().split(" ")[0] if x not in '(){}<>') #nasty 
+
     def scrape_kattis(self, pname=None):
         ''' Scrapes the OpenKattis site to get the needed data on this problem.
             Returns list with lists: [atrrname, atrr]
@@ -211,15 +221,17 @@ class Problem:
         soup = BeautifulSoup(body, 'html.parser')
 
         kattis_attributes = []
-        for s in soup.find_all("div", {"class": "sidebar-info"}):
-            for p in s.find_all("p"):
-                t = p.find_all(text=True)
-                t = [x for x in t if x != "\n"]
-                t[0] = "".join(x for x in t[0].strip().rstrip(':').lower().split(" ")[0] if x not in '(){}<>') #nasty
-                if len(t) < 2 or t[0] in ['problem','license', 'download', 'language']:
+        for attribute_list_item in soup.find_all("div", {"class": "attribute_list-item"}):
+            
+            if label_span := attribute_list_item.find("span", {"class": "attribute_list-label"}, text=True):
+                label = label_span.text.lower()
+                if label is None or label in ['problem','license', 'download', 'language', 'statistics', 'downloads', 'source', 'author']:
                     continue
-                if not t in kattis_attributes:
-                    kattis_attributes.append(t)
+                
+                value = label_span.findNext('span').text.strip()
+                if label == "difficulty":
+                    value = re.sub(r"[a-zA-Z]", "", value) #strip alphabetical characters from difficulty value
+                kattis_attributes.append([label, value])
 
         kattis_attributes.append(["url", url])
         kattis_attributes.append(["name", str(soup.title.string).replace("– Kattis, Kattis", "")])
