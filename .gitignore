@@ -6,3 +6,4 @@ secret/
 *.ans
 *.c.o
 *.cpp.o
+venv/

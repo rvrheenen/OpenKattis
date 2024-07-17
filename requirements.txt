@@ -1,0 +1,4 @@
+beautifulsoup4==4.12.3
+bs4==0.0.2
+pycurl==7.45.3
+soupsieve==2.5
